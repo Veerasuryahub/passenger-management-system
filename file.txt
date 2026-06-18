@@ -1,0 +1,222 @@
+Create a complete full stack Passenger Management System project using Java, Servlet, JSP, JDBC and MySQL.
+
+Project Requirements:
+
+1. Project Name:
+Passenger Management System
+
+2. Tech Stack:
+- Frontend: HTML, CSS, JavaScript
+- Backend: Java Servlet and JSP
+- Database: MySQL
+- Database Connectivity: JDBC
+- Server: Apache Tomcat
+
+3. Create complete folder structure automatically.
+
+Create:
+- index.jsp (Login Page)
+- dashboard.jsp
+- addPassenger.jsp
+- updatePassenger.jsp
+- deletePassenger.jsp
+- searchPassenger.jsp
+- viewPassengers.jsp
+
+Create folders:
+- css
+- js
+- images
+- servlet
+- dao
+- model
+- util
+
+4. Database:
+
+Create database:
+
+PassengerDB
+
+Create table:
+
+Passenger
+
+Columns:
+
+PNR_Number VARCHAR(20) PRIMARY KEY
+
+Passenger_Name VARCHAR(50)
+
+Age INT
+
+Gender VARCHAR(10)
+
+Origin VARCHAR(50)
+
+Destination VARCHAR(50)
+
+Train_Number VARCHAR(20)
+
+Ticket_Price DECIMAL(10,2)
+
+Create SQL script and insert demo records.
+
+5. Features:
+
+US001 Login
+
+Fields:
+
+User ID
+Password
+
+Validation:
+
+User ID minimum 8 characters
+
+Password minimum 10 characters
+
+Password should contain:
+
+1 uppercase
+
+1 number
+
+1 special character
+
+Session management for login and logout.
+
+
+US002 Add Passenger
+
+Fields:
+
+PNR Number
+
+Passenger Name
+
+Age
+
+Gender
+
+Origin
+
+Destination
+
+Train Number
+
+Ticket Price
+
+Save to database.
+
+
+US003 Update Passenger
+
+Search by PNR.
+
+Display passenger details.
+
+PNR should be readonly.
+
+Update remaining fields.
+
+Save updated data.
+
+
+US004 Delete Passenger
+
+Search by PNR.
+
+Display details.
+
+Delete passenger.
+
+Show confirmation message.
+
+
+US005 View All Passengers
+
+Display all passengers in table.
+
+Include:
+
+Search
+
+Pagination
+
+Edit button
+
+Delete button
+
+
+US006 Search Passenger
+
+Search by PNR Number.
+
+Display passenger details.
+
+Show:
+
+"Passenger Not Found"
+
+if no record exists.
+
+
+6. Backend
+
+Create:
+
+Passenger model class
+
+PassengerDAO class
+
+DBConnection utility
+
+Servlets:
+
+LoginServlet
+
+AddPassengerServlet
+
+UpdatePassengerServlet
+
+DeletePassengerServlet
+
+SearchPassengerServlet
+
+ViewPassengerServlet
+
+
+7. Validation
+
+Frontend validation using JavaScript.
+
+Backend validation using Java.
+
+Display friendly success and error messages.
+
+
+8. UI Design
+
+Use modern responsive design.
+
+Dark blue and teal color theme.
+
+Navbar:
+
+Dashboard
+
+Add Passenger
+
+Update Passenger
+
+Delete Passenger
+
+View Passengers
+
+Search Passenger
+
+Logout
+
+Generate complete working code with proper comments and folder structure.
