@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Passenger Management System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f4f6f9;
+}
+
+.navbar{
+
+background:#0F4C81;
+
+padding:15px;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.logo{
+
+color:white;
+
+font-size:24px;
+
+font-weight:bold;
+
+}
+
+.navbar ul{
+
+display:flex;
+
+list-style:none;
+
+}
+
+.navbar ul li{
+
+margin-left:20px;
+
+}
+
+.navbar ul li a{
+
+color:white;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+.container{
+
+width:80%;
+
+margin:20px auto;
+
+background:white;
+
+padding:30px;
+
+border-radius:10px;
+
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+
+}
+
+h2{
+
+text-align:center;
+
+color:#0F4C81;
+
+margin-bottom:20px;
+
+}
+
+label{
+
+font-weight:bold;
+
+}
+
+input,select{
+
+width:100%;
+
+padding:10px;
+
+margin-top:5px;
+
+margin-bottom:15px;
+
+border:1px solid #ccc;
+
+border-radius:5px;
+
+}
+
+button{
+
+padding:10px 20px;
+
+border:none;
+
+background:#0F4C81;
+
+color:white;
+
+border-radius:5px;
+
+cursor:pointer;
+
+margin-right:10px;
+
+}
+
+button:hover{
+
+background:#00A8A8;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+margin-top:20px;
+
+}
+
+table th{
+
+background:#0F4C81;
+
+color:white;
+
+padding:10px;
+
+}
+
+table td{
+
+padding:10px;
+
+border:1px solid #ddd;
+
+text-align:center;
+
+}
+
+.section{
+
+margin-top:50px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">
+
+Passenger Management System
+
+</div>
+
+<ul>
+
+<li><a href="#login">Login</a></li>
+
+<li><a href="#add">Add</a></li>
+
+<li><a href="#update">Update</a></li>
+
+<li><a href="#delete">Delete</a></li>
+
+<li><a href="#view">View</a></li>
+
+<li><a href="#search">Search</a></li>
+
+</ul>
+
+</div>
+
+
+<div class="container">
+
+
+<!-- LOGIN -->
+
+<div class="section" id="login">
+
+<h2>US001 - Login</h2>
+
+<form onsubmit="return validateLogin()">
+
+<label>User ID</label>
+
+<input
+
+type="text"
+
+id="userid"
+
+placeholder="Minimum 8 Characters"
+
+required>
+
+<label>Password</label>
+
+<input
+
+type="password"
+
+id="password"
+
+placeholder="Min 10 chars, uppercase, special, number"
+
+required>
+
+<button>
+
+Login
+
+</button>
+
+<button type="reset">
+
+Reset
+
+</button>
+
+</form>
+
+</div>
+
+
+
+<!-- ADD PASSENGER -->
+
+<div class="section" id="add">
+
+<h2>US002 - Add Passenger</h2>
+
+<form>
+
+<label>PNR Number</label>
+
+<input type="text" required>
+
+<label>Passenger Name</label>
+
+<input type="text" required>
+
+<label>Age</label>
+
+<input type="number" required>
+
+<label>Gender</label>
+
+<select>
+
+<option>Male</option>
+
+<option>Female</option>
+
+<option>Other</option>
+
+</select>
+
+<label>Origin</label>
+
+<input type="text" required>
+
+<label>Destination</label>
+
+<input type="text" required>
+
+<label>Train Number</label>
+
+<input type="text" required>
+
+<label>Ticket Price</label>
+
+<input type="number" required>
+
+<button>
+
+Save
+
+</button>
+
+<button type="reset">
+
+Reset
+
+</button>
+
+</form>
+
+</div>
+
+
+
+
+<!-- UPDATE -->
+
+<div class="section" id="update">
+
+<h2>US003 - Update Passenger</h2>
+
+<label>Search by PNR</label>
+
+<input type="text">
+
+<button>
+
+Search
+
+</button>
+
+<br><br>
+
+<label>PNR Number</label>
+
+<input
+
+type="text"
+
+value="PNR1001"
+
+readonly>
+
+<label>Passenger Name</label>
+
+<input type="text">
+
+<label>Age</label>
+
+<input type="number">
+
+<label>Gender</label>
+
+<select>
+
+<option>Male</option>
+
+<option>Female</option>
+
+<option>Other</option>
+
+</select>
+
+<label>Origin</label>
+
+<input type="text">
+
+<label>Destination</label>
+
+<input type="text">
+
+<label>Train Number</label>
+
+<input type="text">
+
+<label>Ticket Price</label>
+
+<input type="number">
+
+<button>
+
+Update
+
+</button>
+
+<button>
+
+Cancel
+
+</button>
+
+</div>
+
+
+
+
+<!-- DELETE -->
+
+<div class="section" id="delete">
+
+<h2>US004 - Delete Passenger</h2>
+
+<label>Enter PNR Number</label>
+
+<input type="text">
+
+<button>
+
+Search
+
+</button>
+
+<br><br>
+
+<p>
+
+Passenger Name :
+
+Surya
+
+</p>
+
+<p>
+
+Age :
+
+22
+
+</p>
+
+<p>
+
+Destination :
+
+Chennai
+
+</p>
+
+<br>
+
+<button onclick="confirmDelete()">
+
+Delete
+
+</button>
+
+<button>
+
+Cancel
+
+</button>
+
+</div>
+
+
+
+
+<!-- VIEW -->
+
+<div class="section" id="view">
+
+<h2>US005 - View All Passengers</h2>
+
+<input
+
+placeholder="Search by PNR">
+
+<table>
+
+<tr>
+
+<th>PNR</th>
+
+<th>Name</th>
+
+<th>Age</th>
+
+<th>Gender</th>
+
+<th>Origin</th>
+
+<th>Destination</th>
+
+<th>Train</th>
+
+<th>Price</th>
+
+<th>Action</th>
+
+</tr>
+
+<tr>
+
+<td>PNR1001</td>
+
+<td>Surya</td>
+
+<td>22</td>
+
+<td>Male</td>
+
+<td>Madurai</td>
+
+<td>Chennai</td>
+
+<td>TN01</td>
+
+<td>650</td>
+
+<td>
+
+<button>
+
+Edit
+
+</button>
+
+<button>
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>PNR1002</td>
+
+<td>Arun</td>
+
+<td>25</td>
+
+<td>Male</td>
+
+<td>Coimbatore</td>
+
+<td>Salem</td>
+
+<td>TN02</td>
+
+<td>500</td>
+
+<td>
+
+<button>
+
+Edit
+
+</button>
+
+<button>
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+
+
+<!-- SEARCH -->
+
+<div class="section" id="search">
+
+<h2>US006 - Search Passenger</h2>
+
+<label>
+
+Enter PNR Number
+
+</label>
+
+<input type="text">
+
+<button>
+
+Search
+
+</button>
+
+<br><br>
+
+<h3>
+
+Passenger Details
+
+</h3>
+
+<p>
+
+PNR :
+
+PNR1001
+
+</p>
+
+<p>
+
+Name :
+
+Surya
+
+</p>
+
+<p>
+
+Age :
+
+22
+
+</p>
+
+<p>
+
+Gender :
+
+Male
+
+</p>
+
+<p>
+
+Origin :
+
+Madurai
+
+</p>
+
+<p>
+
+Destination :
+
+Chennai
+
+</p>
+
+<p>
+
+Train :
+
+TN01
+
+</p>
+
+<p>
+
+Price :
+
+650
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+<script>
+
+function validateLogin(){
+
+let user=document.getElementById("userid").value;
+
+let pass=document.getElementById("password").value;
+
+let regex=
+
+/^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{10,}$/;
+
+if(user.length<8){
+
+alert(
+
+"User ID should contain minimum 8 characters"
+
+);
+
+return false;
+
+}
+
+if(!regex.test(pass)){
+
+alert(
+
+"Password should contain minimum 10 characters with uppercase, number and special character"
+
+);
+
+return false;
+
+}
+
+alert("Login Successful");
+
+return true;
+
+}
+
+function confirmDelete(){
+
+if(confirm(
+
+"Are you sure want to delete?"
+
+)){
+
+alert(
+
+"Passenger Deleted Successfully"
+
+);
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
